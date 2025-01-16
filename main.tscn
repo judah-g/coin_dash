@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctt4qck5pl2i2"]
+
+[ext_resource type="PackedScene" uid="uid://g3mkvyfqcwh0" path="res://player.tscn" id="1_lxxm0"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("1_lxxm0")]
+
+[node name="GameTimer" type="Timer" parent="."]
