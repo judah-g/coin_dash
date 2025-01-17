@@ -14,7 +14,6 @@ func _ready() -> void:
 	screensize = get_viewport().get_visible_rect().size
 	$Player.screensize = screensize
 	$Player.hide()
-	new_game()
 	pass # Replace with function body.
 
 func new_game():
@@ -31,10 +30,13 @@ func spawn_coins():
 	for i in level + 4:
 		var c = coin_scene.instantiate()
 		add_child(c)
-		c.screensize = Vector2(screensize)
 		c.position = Vector2(randi_range(0, screensize.x), 
 				randi_range(0, screensize.y))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if playing and get_tree().get_nodes_in_group("coins").size() == 0:
+		level += 1
+		time_left += 5
+		spawn_coins()
 	pass
