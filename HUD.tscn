@@ -9,37 +9,56 @@ font_size = 48
 shadow_size = 4
 shadow_offset = Vector2(2, 2)
 
-[node name="Node2D" type="Node2D"]
-
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_jw54t")
 
-[node name="MarginContainer" type="MarginContainer" parent="HUD"]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 10
 anchor_right = 1.0
+offset_bottom = 92.0
 grow_horizontal = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="Score" type="Label" parent="HUD/MarginContainer"]
+[node name="Score" type="Label" parent="MarginContainer"]
 layout_mode = 2
 text = "Coin Dash!"
 label_settings = SubResource("LabelSettings_2as0p")
 
-[node name="Time" type="Label" parent="HUD/MarginContainer"]
+[node name="Time" type="Label" parent="MarginContainer"]
 layout_mode = 2
 text = "Coin Dash!"
 label_settings = SubResource("LabelSettings_2as0p")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -16.0
+offset_right = 44.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_4n5i8")
+text = "Start"
 
 [node name="Message" type="Label" parent="."]
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_top = -11.5
-offset_bottom = 11.5
+offset_top = -36.0
+offset_bottom = 36.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Coin Dash!"
